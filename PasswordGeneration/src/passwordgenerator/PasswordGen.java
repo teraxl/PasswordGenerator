@@ -40,7 +40,7 @@ public class PasswordGen {
 	
 	public static void addComponentOnPane(Container pane) {
 		pane.setLayout(null);
-		JLabel label01 = new JLabel("Набор символов:");
+		JLabel label01 = new JLabel("Набор символов");
 		JLabel label02 = new JLabel("Длинна пароля:");
 		JLabel label03 = new JLabel("символов");
 		JButton btnGenerate = new JButton("Сгенерировать");
