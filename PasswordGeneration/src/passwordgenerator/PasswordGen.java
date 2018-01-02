@@ -147,7 +147,7 @@ public class PasswordGen {
 
 	public static void createAndShowGUI() {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-		JFrame frame = new JFrame("Password Generate");
+		JFrame frame = new JFrame("Password Generate GUI");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		addComponentOnPane(frame.getContentPane());
