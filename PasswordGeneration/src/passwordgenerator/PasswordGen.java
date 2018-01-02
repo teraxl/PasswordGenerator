@@ -44,7 +44,7 @@ public class PasswordGen {
 		JLabel label02 = new JLabel("Длинна пароля:");
 		JLabel label03 = new JLabel("символов");
 		JButton btnGenerate = new JButton("Generate");
-		JCheckBox chkBox = new JCheckBox("Использовать регистр ");
+		JCheckBox chkBox = new JCheckBox("Use register ");
 		JCheckBox checkBoxPunctuation = new JCheckBox("Использовать символы");
 		txtAria = new JTextArea(4, 21);
 		Border border = BorderFactory.createLineBorder(Color.green);
@@ -89,7 +89,7 @@ public class PasswordGen {
 		checkBoxPunctuation.setBounds(35, 100, chkBoxPunctuation.width, chkBoxPunctuation.height);
 		scrollpane.setBounds(5, 125, scrollPaneSize.width - 5, scrollPaneSize.height);
 		txtAria.setBounds(5, 125, txtAriaSize.width - 2, txtAriaSize.height);
-		btnGenerate.setBounds(120, 190, btnGenSize.width - 3, btnGenSize.height);
+		btnGenerate.setBounds(120, 190, btnGenSize.width + 20 - 3, btnGenSize.height);
 		
 		pane.add(label01);
 		pane.add(combobox);
