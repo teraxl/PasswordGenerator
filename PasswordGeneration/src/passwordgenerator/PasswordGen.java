@@ -43,7 +43,7 @@ public class PasswordGen {
 		JLabel label01 = new JLabel("Набор символов");
 		JLabel label02 = new JLabel("Длинна пароля:");
 		JLabel label03 = new JLabel("символов");
-		JButton btnGenerate = new JButton("Generate");
+		JButton btnGenerate = new JButton("Generate password");
 		JCheckBox chkBox = new JCheckBox("Использовать регистр ");
 		JCheckBox checkBoxPunctuation = new JCheckBox("Использовать символы");
 		txtAria = new JTextArea(4, 21);
