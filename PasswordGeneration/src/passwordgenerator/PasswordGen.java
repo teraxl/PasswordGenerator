@@ -47,7 +47,7 @@ public class PasswordGen {
 		JCheckBox chkBox = new JCheckBox("Использовать регистр ");
 		JCheckBox checkBoxPunctuation = new JCheckBox("Использовать символы");
 		txtAria = new JTextArea(4, 21);
-		Border border = BorderFactory.createLineBorder(Color.BLUE);
+		Border border = BorderFactory.createLineBorder(Color.green);
 		txtAria.setBorder(border);
 		txtAria.setLineWrap(true);
 		txtAria.setEditable(false);
