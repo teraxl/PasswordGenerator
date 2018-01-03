@@ -158,7 +158,7 @@ public class PasswordGen {
 		
 		// JPopapMenu
 		jPopupMenu = new JPopupMenu();
-		itemMenu = new JMenuItem("Копировать");
+		itemMenu = new JMenuItem("Copy");
 		itemMenu.addActionListener(new ActionListener() {
 			
 			@Override
