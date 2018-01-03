@@ -156,6 +156,45 @@ public class PasswordGen {
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		frame.setLocation(dimension.width / 2 - 136, dimension.height / 2 - 125);
 		
+		
+		
+		MouseListener mouseListener = new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				if (e.isPopupTrigger()) {
+					jPopupMenu.show(txtAria, e.getX(), e.getY());	
+				}
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+		
+		txtAria.addMouseListener(mouseListener);
+		
 		// JPopapMenu
 		jPopupMenu = new JPopupMenu();
 		itemMenu = new JMenuItem("Copy");
@@ -174,29 +213,17 @@ public class PasswordGen {
 		itemMenuSelectAll.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent paramActionEvent) {
-				txtAria.setFocusable(true);
+				//txtAria.setFocusable(true);
 				txtAria.selectAll();
 			}
 		});
 		jPopupMenu.add(itemMenuSelectAll);
-		txtAria.addMouseListener(new MouseListener() {
-			@Override
-			public void mousePressed(MouseEvent paramMouseEvent) {
-				if (paramMouseEvent.isPopupTrigger()) {
-					jPopupMenu.show(txtAria, paramMouseEvent.getX(), paramMouseEvent.getY());
-					
-				}
-			}
-			
-			@Override
-			public void mouseReleased(MouseEvent paramMouseEvent) {}
-			@Override
-			public void mouseExited(MouseEvent paramMouseEvent) {}	
-			@Override
-			public void mouseEntered(MouseEvent paramMouseEvent) {}
-			@Override
-			public void mouseClicked(MouseEvent paramMouseEvent) {}
-		});
+		
+		
+		/*
+		 * 
+		 * 
+		 */
 	}
 
 	public static void main(String[] args) {
