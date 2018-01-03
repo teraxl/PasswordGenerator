@@ -135,8 +135,10 @@ public class PasswordGen {
 			public void actionPerformed(ActionEvent e) {
 				int numSpinner = (int)spinner.getValue();
 				PasswordGenerator passwordGenerator = new PasswordGenerator.PasswordGeneratorBuilder()
-						.useDigits(combobox.getSelectedIndex() == 0 ? true : false || combobox.getSelectedIndex() == 2 ? true : false)
-						.useLower(combobox.getSelectedIndex() == 1 ? true : false || combobox.getSelectedIndex() == 2 ? true : false)
+						.useDigits(combobox.getSelectedIndex() == 0 ? true : false 
+								|| combobox.getSelectedIndex() == 2 ? true : false)
+						.useLower(combobox.getSelectedIndex() == 1 ? true : false 
+								|| combobox.getSelectedIndex() == 2 ? true : false)
 						.useUpper(chkBox.isSelected() ? true : false)
 						.usePunctuation(checkBoxPunctuation.isSelected() ? true : false)
 						.build();
