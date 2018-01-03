@@ -170,7 +170,7 @@ public class PasswordGen {
 		});
 		jPopupMenu.add(itemMenu);
 		
-		itemMenuSelectAll = new JMenuItem("Выделить всё");
+		itemMenuSelectAll = new JMenuItem("Select ALL");
 		itemMenuSelectAll.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent paramActionEvent) {
