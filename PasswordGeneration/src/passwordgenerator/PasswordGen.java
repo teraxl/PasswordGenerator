@@ -169,28 +169,13 @@ public class PasswordGen {
 			}
 			
 			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
+			public void mousePressed(MouseEvent e) {}
 			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
+			public void mouseExited(MouseEvent e) {	}
 			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
+			public void mouseEntered(MouseEvent e) {}
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
+			public void mouseClicked(MouseEvent e) {}
 		};
 		
 		txtAria.addMouseListener(mouseListener);
@@ -218,12 +203,6 @@ public class PasswordGen {
 			}
 		});
 		jPopupMenu.add(itemMenuSelectAll);
-		
-		
-		/*
-		 * 
-		 * 
-		 */
 	}
 
 	public static void main(String[] args) {
