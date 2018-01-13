@@ -13,6 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -28,6 +31,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSpinner; 
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SpinnerListModel;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
@@ -84,12 +88,11 @@ public class PasswordGen {
 		combobox.addItem("Пароль из букв");
 		combobox.addItem("Пароль из букв и цифр");
 		combobox.setFocusable(false);
-		SpinnerModel spinnerModelNumber = new SpinnerNumberModel(1, 1, null, 1);
+		SpinnerModel spinnerModelNumber = new SpinnerNumberModel(8, 1, null, 1);
 		spinner = new JSpinner(spinnerModelNumber);
-		spinner.setValue(8);
 		JComponent editor = spinner.getEditor();
 		JSpinner.DefaultEditor spinnerEditor = (JSpinner.DefaultEditor) editor;
-		spinnerEditor.getTextField().setHorizontalAlignment(JTextField.LEFT);
+		spinnerEditor.getTextField().setHorizontalAlignment(JTextField.CENTER);
 
 		boxToPane.addBoxToPane(pane);
 		
@@ -145,8 +148,6 @@ public class PasswordGen {
 		frame.setVisible(true);
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 		frame.setLocation(dimension.width / 2 - 136, dimension.height / 2 - 125);
-		txtAria.setFocusable(true);
-		scrollpane.setFocusable(true);
 		jPopupMenu = new JPopupMenu();
 		itemMenu = new JMenuItem("Копировать");
 		itemMenu.addActionListener(new ActionListener() {
@@ -157,7 +158,6 @@ public class PasswordGen {
 				if(txtAria.getSelectedText() == null) {
 					JOptionPane.showMessageDialog(frame, "Вы не выделили ни одного символа","Внимание", JOptionPane.INFORMATION_MESSAGE);
 				} else {
-
 					StringSelection stringToCopy = new StringSelection(txtAria.getSelectedText());
 					Clipboard copyredText = Toolkit.getDefaultToolkit().getSystemClipboard();
 					copyredText.setContents(stringToCopy, null);
@@ -170,7 +170,7 @@ public class PasswordGen {
 		itemMenuSelectAll.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent paramActionEvent) {
-				txtAria.selectAll();
+					txtAria.selectAll();
 			}
 		});
 		jPopupMenu.add(itemMenuSelectAll);
