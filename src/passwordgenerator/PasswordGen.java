@@ -1,5 +1,6 @@
 package passwordgenerator;
 
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
@@ -135,7 +136,7 @@ public class PasswordGen {
 	public static void createAndShowGUI() {
 //		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("Генератор паролей");
-		image = Toolkit.getDefaultToolkit().getImage("C:\\eclipse\\project\\image_icon.png");
+		image = Toolkit.getDefaultToolkit().getImage("src/passwordgenerator/image_icon.png");
 		frame.setIconImage(image);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);

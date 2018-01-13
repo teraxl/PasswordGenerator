@@ -1,5 +1,6 @@
 package passwordgenerator;
 
+
 import javax.swing.Box;
 import java.awt.Container;
 
@@ -40,8 +41,9 @@ public class BoxToPane extends Container{
 		boxLayout4.add(PasswordGen.scrollpane);
 		
 		Box boxLayout5 = Box.createHorizontalBox();
+//		boxLayout5.add(Box.createHorizontalGlue());
 		boxLayout5.add(PasswordGen.btnGenerate);
-		boxLayout5.add(Box.createHorizontalGlue());
+//		boxLayout5.setCursor(Cursor.HAND_CURSOR);
 		
 		boxLayout0.add(boxLayout1);
 		boxLayout0.add(boxLayoutComboBox);
@@ -54,14 +56,3 @@ public class BoxToPane extends Container{
 		pane.add(boxLayout0);
 	}
 }
-/*
-pane.add(label01);
-pane.add(combobox);
-pane.add(label02);
-pane.add(spinner);
-pane.add(label03);
-pane.add(chkBox);
-pane.add(checkBoxPunctuation);
-pane.add(scrollpane);
-pane.add(btnGenerate);
-*/
