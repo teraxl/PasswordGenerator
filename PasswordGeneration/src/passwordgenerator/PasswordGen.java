@@ -73,11 +73,10 @@ public class PasswordGen {
 		txtAria.setFocusable(true);
 		scrollpane = new JScrollPane(txtAria);
 		scrollpane.setSize(20, 20);
-
+		
 		if (chkBox.isSelected()) {
 			txtAria.setEditable(true);
 		}
-
 		combobox = new JComboBox<>();
 		combobox.addItem("[0-9]");
 		combobox.addItem("[a-z]");
