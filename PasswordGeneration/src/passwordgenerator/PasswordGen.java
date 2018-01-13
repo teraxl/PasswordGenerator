@@ -2,9 +2,9 @@ package passwordgenerator;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Insets;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -12,10 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -23,6 +21,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
@@ -55,17 +54,20 @@ public class PasswordGen {
 	public static Box boxLayout5;
 	public static JComboBox<String> combobox;
 	public static JSpinner spinner = new JSpinner();
+	public static Image image;
 	
 	
 	public static void addComponentOnPane(Container pane) {
 		label01 = new JLabel("Набор символов");
 		label02 = new JLabel("Длинна пароля:");
 		label03 = new JLabel("символов");
-		btnGenerate = new JButton("Generate");
-		chkBox = new JCheckBox("Use register ");
+		btnGenerate = new JButton("Сгенерировать пароль");
+		Cursor cur = new Cursor(Cursor.HAND_CURSOR);
+		btnGenerate.setCursor(cur);
+		chkBox = new JCheckBox("Использовать регистр");
 		checkBoxPunctuation = new JCheckBox("Использовать символы");
 		txtAria = new JTextArea(4, 21);
-		Border border = BorderFactory.createLineBorder(Color.green);
+		Border border = BorderFactory.createLineBorder(Color.WHITE);
 		txtAria.setBorder(border);
 		txtAria.setLineWrap(true);
 		txtAria.setEditable(false);
@@ -77,9 +79,9 @@ public class PasswordGen {
 			txtAria.setEditable(true);
 		}
 		combobox = new JComboBox<>();
-		combobox.addItem("[0-9]");
-		combobox.addItem("[a-z]");
-		combobox.addItem("[0-9] + [a-z]");
+		combobox.addItem("Пароль из цифр");
+		combobox.addItem("Пароль из букв");
+		combobox.addItem("Пароль из букв и цифр");
 		SpinnerModel spinnerModelNumber = new SpinnerNumberModel(1, 1, null, 1);
 		spinner = new JSpinner(spinnerModelNumber);
 		spinner.setValue(8);
@@ -130,8 +132,10 @@ public class PasswordGen {
 	}
 
 	public static void createAndShowGUI() {
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		JFrame frame = new JFrame("Password Generate GUI");
+//		JFrame.setDefaultLookAndFeelDecorated(true);
+		JFrame frame = new JFrame("Генератор паролей");
+		image = Toolkit.getDefaultToolkit().getImage("C:\\eclipse\\project\\image_icon.png");
+		frame.setIconImage(image);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		addComponentOnPane(frame.getContentPane());
@@ -142,19 +146,25 @@ public class PasswordGen {
 		txtAria.setFocusable(true);
 		scrollpane.setFocusable(true);
 		jPopupMenu = new JPopupMenu();
-		itemMenu = new JMenuItem("Copy");
+		itemMenu = new JMenuItem("Копировать");
 		itemMenu.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent paramActionEvent) {
-				StringSelection stringToCopy = new StringSelection(txtAria.getSelectedText());
-				Clipboard copyredText = Toolkit.getDefaultToolkit().getSystemClipboard();
-				copyredText.setContents(stringToCopy, null);
+				
+				if(txtAria.getSelectedText() == null) {
+					JOptionPane.showMessageDialog(frame, "Вы не выделили ни одного символа");
+				} else {
+
+					StringSelection stringToCopy = new StringSelection(txtAria.getSelectedText());
+					Clipboard copyredText = Toolkit.getDefaultToolkit().getSystemClipboard();
+					copyredText.setContents(stringToCopy, null);
+				}
 			}
 		});
 		jPopupMenu.add(itemMenu);
 
-		itemMenuSelectAll = new JMenuItem("Select ALL");
+		itemMenuSelectAll = new JMenuItem("Выделить всё");
 		itemMenuSelectAll.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent paramActionEvent) {
