@@ -155,7 +155,8 @@ public class PasswordGen {
 			public void actionPerformed(ActionEvent paramActionEvent) {
 				
 				if(txtAria.getSelectedText() == null) {
-					JOptionPane.showMessageDialog(frame, "Вы не выделили ни одного символа");
+					
+					JOptionPane.showMessageDialog(frame, "Вы не выделили ни одного символа","Внимание", JOptionPane.INFORMATION_MESSAGE);
 				} else {
 
 					StringSelection stringToCopy = new StringSelection(txtAria.getSelectedText());
