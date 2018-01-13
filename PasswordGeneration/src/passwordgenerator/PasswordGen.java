@@ -82,6 +82,7 @@ public class PasswordGen {
 		combobox.addItem("Пароль из цифр");
 		combobox.addItem("Пароль из букв");
 		combobox.addItem("Пароль из букв и цифр");
+		combobox.setFocusable(false);
 		SpinnerModel spinnerModelNumber = new SpinnerNumberModel(1, 1, null, 1);
 		spinner = new JSpinner(spinnerModelNumber);
 		spinner.setValue(8);
@@ -168,7 +169,6 @@ public class PasswordGen {
 		itemMenuSelectAll.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent paramActionEvent) {
-				// txtAria.setFocusable(true);
 				txtAria.selectAll();
 			}
 		});
@@ -177,17 +177,13 @@ public class PasswordGen {
 		MouseListener mouseListener = new MouseListener() {
 			
 			@Override
-			public void mousePressed(MouseEvent e) {
-//				if (e.isPopupTrigger()) {
-//					jPopupMenu.show(txtAria, e.getX(), e.getY());
-//				}
-			}
-			@Override
 			public void mouseReleased(MouseEvent e) {
 				if (e.isPopupTrigger()) {
 					jPopupMenu.show(txtAria, e.getX(), e.getY());
 				}
 			}
+			@Override
+			public void mousePressed(MouseEvent e) {}
 			@Override
 			public void mouseExited(MouseEvent e) {}
 			@Override
