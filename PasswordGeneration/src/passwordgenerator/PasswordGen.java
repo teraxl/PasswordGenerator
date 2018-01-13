@@ -143,8 +143,6 @@ public class PasswordGen {
 		frame.setLocation(dimension.width / 2 - 136, dimension.height / 2 - 125);
 		txtAria.setFocusable(true);
 		scrollpane.setFocusable(true);
-
-		// JPopapMenu
 		jPopupMenu = new JPopupMenu();
 		itemMenu = new JMenuItem("Copy");
 		itemMenu.addActionListener(new ActionListener() {
