@@ -58,7 +58,6 @@ public class PasswordGen {
 	
 	
 	public static void addComponentOnPane(Container pane) {
-//		pane.setLayout(null);
 		label01 = new JLabel("Набор символов");
 		label02 = new JLabel("Длинна пароля:");
 		label03 = new JLabel("символов");
