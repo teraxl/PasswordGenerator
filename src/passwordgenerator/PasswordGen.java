@@ -33,7 +33,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
-public class PasswordGen {
+public class PasswordGen extends ClassLoader {
 
 	public static JTextArea txtAria;
 	public static JScrollPane scrollpane;
@@ -56,7 +56,6 @@ public class PasswordGen {
 	public static JComboBox<String> combobox;
 	public static JSpinner spinner = new JSpinner();
 	public static Image image;
-	
 	
 	public static void addComponentOnPane(Container pane) {
 		label01 = new JLabel("Набор символов");
@@ -131,7 +130,7 @@ public class PasswordGen {
 			}
 		});
 	}
-
+	
 	public static void createAndShowGUI() {
 //		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("Генератор паролей");
