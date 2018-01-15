@@ -134,7 +134,7 @@ public class PasswordGen extends ClassLoader {
 	public static void createAndShowGUI() {
 //		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("Генератор паролей");
-		image = Toolkit.getDefaultToolkit().getImage("src/passwordgenerator/image_icon.png");
+		image = Toolkit.getDefaultToolkit().getImage("images/image_icon.png");
 		frame.setIconImage(image);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
