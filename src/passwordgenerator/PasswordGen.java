@@ -35,7 +35,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
 
-public class PasswordGen extends ClassLoader {
+public class PasswordGen {
 
 	public static JTextArea txtAria;
 	public static JScrollPane scrollpane;
@@ -136,8 +136,8 @@ public class PasswordGen extends ClassLoader {
 	public static void createAndShowGUI() {
 //		JFrame.setDefaultLookAndFeelDecorated(true);
 		try {
-			//UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-			UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+//			UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -151,7 +151,7 @@ public class PasswordGen extends ClassLoader {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		JFrame frame = new JFrame("Генератор паролей");
+		final JFrame frame = new JFrame("Генератор паролей");
 		ImagePack imagePack = new ImagePack();
 		//image = Toolkit.getDefaultToolkit().getImage("images/image_icon.png");
 		frame.setIconImage(imagePack.getImagePack());
