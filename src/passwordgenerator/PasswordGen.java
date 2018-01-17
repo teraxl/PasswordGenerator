@@ -136,8 +136,8 @@ public class PasswordGen {
 	public static void createAndShowGUI() {
 //		JFrame.setDefaultLookAndFeelDecorated(true);
 		try {
-			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-//			UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+//			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+			UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -198,7 +198,11 @@ public class PasswordGen {
 				}
 			}
 			@Override
-			public void mousePressed(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {
+				if(e.isPopupTrigger()) {
+					jPopupMenu.show(txtAria, e.getX(), e.getY());
+				}
+			}
 			@Override
 			public void mouseExited(MouseEvent e) {}
 			@Override
